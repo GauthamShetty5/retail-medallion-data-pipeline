@@ -327,15 +327,14 @@ dbutils.widgets.text("file_date", "20240115")
 ```text
 retail-medallion-data-pipeline
 │
-├── notebooks
-│   ├── 01_bronze_ingestion
-│   ├── 02_silver_customers
-│   ├── 03_silver_products
-│   ├── 04_silver_orders
-│   ├── 05_gold_dim_customers
-│   ├── 06_gold_dim_products
-│   ├── 07_gold_fact_orders
-│   └── 08_audit_and_versioning
+├── bronze
+│   └── bronze_ingestion.ipynb
+│
+├── silver
+│   └── silver_transformation.ipynb
+│
+├── gold
+│   └── gold_dimensional_model.ipynb
 │
 ├── architecture
 │   ├── full_architecture.png
@@ -347,6 +346,8 @@ retail-medallion-data-pipeline
 │
 └── README.md
 ```
+
+> 📓 Each layer lives in its own folder with a single Databricks notebook: `bronze/` handles raw ingestion, `silver/` handles cleansing and unification, and `gold/` handles the dimensional model and SCD logic.
 
 ---
 
